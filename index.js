@@ -41,7 +41,7 @@ module.exports = function() {
 
   var dependencies = Promise.resolve()
     .then(function() {
-      if (!options.cache || cachedDependencies.length === 0) {
+      if (!options.cache) {
         return elmCompiler.findAllDependencies(input).then(addDependencies.bind(this));
       }
     }.bind(this))
